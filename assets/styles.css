@@ -1,3 +1,4 @@
+/* #region common */
 * 
 {
     box-sizing: border-box;
@@ -189,6 +190,8 @@ div.slot
     }
 }
 
+/* #endregion */
+
 /* #region alpha logo */
 div.alpha-logo
 {
@@ -370,12 +373,31 @@ div.new-classes ul li div.info
 
 /* #region regular classes */
 
-
+div.regular-classes
+{
+    position: relative;
+    
+}
+div.regular-classes::after
+{
+    content:"";
+    background-image: url(big-ying-yang.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.05;    
+    
+}
 
 div.regular-classes > ul > li
 {
     border: 1px solid silver;
-    padding:0.5rem;
+    padding:1rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
 }
@@ -403,6 +425,19 @@ div.address
     font-style: italic;
 }
 
+div.columns div.address
+{
+    flex:1
+}
+
+div.columns img
+{
+    width:48px;
+    height: 48px;
+
+}
+
+
 /* #endregion*/
 
 /* #region get in touch*/
@@ -429,14 +464,6 @@ div.get-in-touch div.gordon img
 {
     width: 120px;
     margin-right: 1em;
-    
-}
-@media (max-width: 800px) 
-{
-    div.get-in-touch div.gordon img
-    {
-        width: 80px;
-    }
 }
 
 div.get-in-touch div.form div.field
@@ -481,6 +508,8 @@ div.get-in-touch div.form button
 
 /* #endregion */
 
+/* #region find us */
+
 
 div.find-us div.map
 {
@@ -488,7 +517,6 @@ div.find-us div.map
     height:250px;
 }
 
-/* #region class venue */
 
 div.class-venue
 {
@@ -514,18 +542,17 @@ div.class-venue div.entry div.details
     flex-direction: column;
 }
 
+div.class-venue div.entry div.details img
+{
+    height:auto;
+    width:100%;
+}
+
 
 div.class-venue div.entry div.details div.bio
 {
-    margin-top:0.5rem
-}
-
-@media (max-width: 800px) 
-{
-    div.class-venue div.entry div.details div.bio
-    {
-        font-size: smaller;
-    }
+    margin-top:0.5rem;
+    font-size: normal;
 }
 
 
@@ -534,8 +561,9 @@ div.class-venue div.entry div.details a.directions
     text-align: right;
 }
 
-/* #endegion */
+/* #endregion */
 
+/* #region links */
 
 div.links ul 
 {
@@ -554,3 +582,5 @@ div.links ul li
     border-bottom: 1px dotted silver;
     white-space: pre;
 }
+
+/* #endregion */
