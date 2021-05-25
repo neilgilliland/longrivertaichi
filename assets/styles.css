@@ -17,16 +17,19 @@ body
 h1, h2
 {
     margin:0;
-    font-weight:normal
+    font-weight:bold;
+    text-align: center;
 }
 
 h1
 {
     font-size:1.5rem;
+    text-align: center;
 }
 h2
 {
     font-size:1.3rem;
+    text-align: left;
 }
 
 ul
@@ -97,7 +100,7 @@ div.spacer
 p.big
 {
     font-size:1rem;
-    letter-spacing: 0.5px;
+    
 }
 
 @media (min-width: 800px) 
@@ -135,8 +138,8 @@ div.columns
 
 div.columns p
 {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }
 div.columns p:first-child
 {
@@ -198,14 +201,14 @@ div.alpha-logo::after
     content: "";
     background-image: url(../assets/logo.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     z-index: -1;   
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    opacity: 0.05;
+    opacity: 0.04;
 }
 
 /* #endregion */
@@ -249,7 +252,10 @@ div.ying-yang img
 
 div.ying-yang-stamp
 {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 div.ying-yang-stamp img
 {
@@ -331,6 +337,14 @@ div.new-classes
     opacity: 0.8;
 }
 
+@media (max-width: 800px) 
+{
+    div.new-classes
+    {
+        margin:0;
+    }
+}
+
 div.new-classes ul
 {
     margin-top:0.5rem;
@@ -338,7 +352,8 @@ div.new-classes ul
 
 div.new-classes ul li div.date-and-time
 {
-    font-weight: bold;
+    font-weight: normal;
+    letter-spacing: 2px;
 }
 
 div.new-classes ul li 
@@ -357,33 +372,32 @@ div.new-classes ul li div.info
 
 div.regular-classes h1
 {
-    margin:0rem 2rem 1rem 2rem;
 }
 
 div.regular-classes > ul > li
 {
     border: 1px solid silver;
-    padding:1rem;
+    padding:0.5rem;
     margin-bottom: 1rem;
     border-radius: 0.5rem;
 }
 
 ul.days
 {
-    margin:0rem 2rem 1rem 2rem;
+    margin:0;
 
 }
 
-ul.days > li span
+ul.days > li
 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 ul.time-slots li
 {
     font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
 }
 
 div.address
@@ -493,14 +507,18 @@ div.class-venue h1
 div.class-venue div.entry
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 div.class-venue div.entry div.details
 {
     display: flex;
     flex-direction: column;
-    flex-basis: 33%;
+}
+
+div.class-venue div.entry div.map
+{
+    
 }
 
 div.class-venue div.entry div.details div.address
@@ -528,12 +546,6 @@ div.class-venue div.entry div.details div.bio
 div.class-venue div.entry div.details a.directions
 {
     text-align: right;
-}
-
-div.class-venue div.entry div.map
-{
-    flex-basis: 66%;   
-    margin-left:1rem
 }
 
 /* #endegion */
