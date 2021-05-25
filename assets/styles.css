@@ -370,9 +370,7 @@ div.new-classes ul li div.info
 
 /* #region regular classes */
 
-div.regular-classes h1
-{
-}
+
 
 div.regular-classes > ul > li
 {
@@ -516,18 +514,6 @@ div.class-venue div.entry div.details
     flex-direction: column;
 }
 
-div.class-venue div.entry div.map
-{
-    
-}
-
-div.class-venue div.entry div.details div.address
-{
-}
-
-div.class-venue div.entry div.details img
-{
-}
 
 div.class-venue div.entry div.details div.bio
 {
