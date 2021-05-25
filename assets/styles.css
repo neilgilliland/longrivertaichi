@@ -70,21 +70,6 @@ div.fit > div
 {
     max-width: 800px;
 }
-@media (min-width: 800px) 
-{
-    div.fit > div
-    {
-        min-width: 760px;
-    }
-}
-@media (max-width: 800px) 
-{
-    div.fit > div
-    {
-        min-width: 100%;
-    }
-}
-
 div.fit > p
 {
     max-width: 800px;
@@ -104,14 +89,6 @@ p.big
     
 }
 
-@media (min-width: 800px) 
-{
-    p.big
-    {
-        font-size: 1.5rem;
-    }    
-}
-
 p.white
 {
     color:white
@@ -127,14 +104,6 @@ div.columns
 {
     display: flex;
     flex-direction: row;
-}
-
-@media (min-width: 800px) 
-{
-    div.columns
-    {
-        flex-direction: column;
-    }    
 }
 
 div.columns p
@@ -169,7 +138,7 @@ div.framed
 
 div.section
 {
-    width: 1024px;
+    width: 100%;
 }
 
 div.slot
@@ -180,14 +149,6 @@ div.slot
     width: 100%;
     
     background-color: rgba(0, 0, 0, 0.02);
-}
-
-@media (max-width: 1024px) 
-{
-    div.section
-    {
-        width: 100%;
-    }
 }
 
 /* #endregion */
@@ -282,7 +243,7 @@ div.logo
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1024px;
+    width: 100%;
     height: auto;
 }
 div.logo div.gfx
@@ -313,22 +274,6 @@ div.logo div.gfx img.squirl
     width:25%
 }
 
-@media (min-width: 800px) 
-{
-    div.logo p.title
-    {
-        font-size: xx-large;
-        margin-top: -3vw;
-    }    
-}
-
-@media (max-width: 1024px) 
-{
-    div.logo
-    {
-        width: 100%;
-    }
-}
 /* #endregion */
 
 /* #region new classes */
@@ -336,16 +281,7 @@ div.logo div.gfx img.squirl
 div.new-classes
 {
     border-radius: 5px;
-    margin:1rem 2rem 1rem 2rem;
     opacity: 0.8;
-}
-
-@media (max-width: 800px) 
-{
-    div.new-classes
-    {
-        margin:0;
-    }
 }
 
 div.new-classes ul
@@ -420,10 +356,6 @@ ul.time-slots li
     white-space: pre;
 }
 
-div.address
-{
-    font-style: italic;
-}
 
 div.columns div.address
 {
@@ -521,13 +453,21 @@ div.find-us div.map
 div.class-venue
 {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    background-color: whitesmoke;
 }
 
 div.class-venue h1
 {
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
+    padding-top: 1rem;
+}
+
+
+div.class-venue div.address
+{
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 div.class-venue div.entry
@@ -553,6 +493,7 @@ div.class-venue div.entry div.details div.bio
 {
     margin-top:0.5rem;
     font-size: normal;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -584,3 +525,62 @@ div.links ul li
 }
 
 /* #endregion */
+
+
+@media (min-width: 1024px) 
+{
+    h1
+    {
+        font-size: 2rem;
+    }
+    div.section
+    {
+        width: 1024px;
+    }
+
+    div.logo p.title
+    {
+        font-size: 3rem;
+        font-weight: normal;
+        margin-top: -2rem;
+    }
+
+    div.alpha-logo::after
+    {
+        background-size: 62% ;
+        background-position: center;
+    }
+
+    div.alpha-logo p.big
+    {
+        font-size: x-large;
+        margin-bottom: 2rem;
+    }
+
+    div.class-venue div.entry div.details
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    div.class-venue div.entry div.details img
+    {
+        height:auto;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+    }
+
+    div.class-venue div.entry
+    {
+        padding: 1rem;
+        
+    }
+    
+    
+    div.class-venue div.entry div.details div.bio
+    {
+        margin-top:0.5rem;
+        font-size: larger;
+    }
+    
+}
