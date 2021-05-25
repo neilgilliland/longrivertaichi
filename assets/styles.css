@@ -442,6 +442,10 @@ div.get-in-touch div.form button
 
 /* #region find us */
 
+div.find-us
+{
+    padding:0.25rem
+}
 
 div.find-us div.map
 {
