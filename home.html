@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/styles.css?v0.14">
+
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="apigClient.js"></script>
+
+
 </head>
  
 <body>
@@ -139,10 +153,11 @@
             </div>
             <div class="form">
                 <h2>Send a message</h2>
-                <div class="field"><label>Your name</label><input type="text" /></div>
-                <div class="field"><label>Your email</label><input type="text" /></div>
-                <div class="field"><label>Message</label><textarea rows="5"></textarea></div>
-                <button>SEND</button>
+                <div class="field" ><label>Your name</label><input type="text" id="contactUs_name" value="Neil Gilliland"/></div>
+                <div class="field" i><label>Your email</label><input type="text" id="contactUs_email" value="neil@12chs.co.uk"/></div>
+                <div class="field"><label>Message</label><textarea rows="5" id="contactUs_message">When's the next class starting. 
+The "wife" wants to know.</textarea></div>
+                <button onclick="contactUs()">SEND</button>
             </div>
         </div>
     </div>
@@ -313,6 +328,31 @@ roy@longrivertaichi.org
         showMap( "falkirk-guide",  2, "guide hall",15, [1,2]);
     		
 	}
+
+    function contactUs()
+    {
+        let name = document.getElementById("contactUs_name").value;
+        let email = document.getElementById("contactUs_email").value;
+        let message = document.getElementById("contactUs_message").value;
+
+        let body  = {name:escapeJSON(name), email:email, message:message}
+
+        console.log(body)
+
+        var apigClient = apigClientFactory.newClient();
+
+        var params = {}
+        var additionalParams = {}
+
+        apigClient.rootPost(params, body, additionalParams)
+        .then(function(result)
+        {
+            console.log('Success:', result);
+        }).catch( function(result)
+        {
+            console.log('Failed:', result);
+        });
+    }
 </script>
 
 <script type="text/javascript"
