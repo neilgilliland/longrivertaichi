@@ -506,11 +506,13 @@ div.class-venue div.entry a.directions
 {
     align-self: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     padding:1rem;
     border:1px solid silver;
     border-radius: 0.5rem;
     text-decoration: none;
     color: black;
+
 }
 
 div.class-venue div.entry a.directions:hover
@@ -592,11 +594,15 @@ div.links ul li
         
     }
     
-    
     div.class-venue div.entry div.details div.bio
     {
         margin-top:0.5rem;
         font-size: larger;
+    }
+
+    div.class-venue div.entry a.directions
+    {
+        margin-bottom: 0rem;
     }
     
 }
