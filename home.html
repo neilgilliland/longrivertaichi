@@ -51,7 +51,12 @@
             <img src="assets/yinyang.png"/>
         </div>
         
-        <h1>Classes Starting Again!</h1>
+        <div class="title-bar">
+            <div></div>
+            <h1>Classes Starting Again!</h1>
+            <a href="https://www.facebook.com/lrtccs/" class="facebook"><img src="assets/facebook.png"></img></a>
+        </div>
+        
 
         <ul>
             <li>
@@ -65,10 +70,10 @@
             </li>
 
             <li>
-                <div class="info">Phone Gordon on 07852 726668 for more information or use our contacts page to send an email or just turn up.</div>
+                <div class="info">Phone Gordon on 07852 726668 for more information or use our <a href="#getInTouch">get in touch</a>  page to send an email or just turn up.</div>
             </li>
-
         </ul>
+        
     </div>
 
 </div>
@@ -139,6 +144,7 @@
 
 <div class="slot">
     <div class="section">
+        <a name="getInTouch"></a>
         <div class="framed get-in-touch">
             
             <h1>Get in touch</h1>
@@ -331,11 +337,12 @@ roy@longrivertaichi.org
 
     function contactUs()
     {
+        let to = "Gordon@Longrivertaichi.org";
         let name = document.getElementById("contactUs_name").value;
         let email = document.getElementById("contactUs_email").value;
         let message = document.getElementById("contactUs_message").value;
 
-        let body  = {name:name, email:email, message:message}
+        let body  = {to:to, name:name, email:email, message:message}
 
         console.log(body)
 
@@ -348,7 +355,8 @@ roy@longrivertaichi.org
         .then(function(result)
         {
             console.log('Success:', result);
-        }).catch( function(result)
+        })
+        .catch( function(result)
         {
             console.log('Failed:', result);
         });
