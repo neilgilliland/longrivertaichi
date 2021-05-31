@@ -219,7 +219,7 @@ div.ying-yang-stamp
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 0.5rem;
+    
 }
 div.ying-yang-stamp img
 {
@@ -323,12 +323,13 @@ div.new-classes div.title-bar > *:nth-child(3){ flex-basis: 10%; }
 div.new-classes a.facebook img
 {
     width:48px;
-    margin-top: -0.75rem;
+    margin-top: -0.25rem;
     margin-right: -0.75rem;
 }
 
 div.new-classes div.title-bar a.facebook
 {
+    box-sizing: border-box;
     text-align: right;
 }
 
