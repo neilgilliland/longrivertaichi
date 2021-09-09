@@ -351,16 +351,10 @@ roy@longrivertaichi.org
 
 	 var config = 
 	 {
-            accessKey: '',
-            secretKey: '',
-            sessionToken: '',
-            region: 'eu-west-1',
-            apiKey: undefined,
-            defaultContentType: 'application/json',
-            defaultAcceptType: 'application/json'
-        };
+            region: 'eu-west-1'
+         };
 	    
-        var apigClient = apigClientFactory.newClient();
+        var apigClient = apigClientFactory.newClient(config);
 
         var params = {}
         var additionalParams = {}
