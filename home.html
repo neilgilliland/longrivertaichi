@@ -367,7 +367,7 @@ roy@longrivertaichi.org
 
     function contactUs()
     {
-        let to = "Gordon@Longrivertaichi.org";
+        let to = "neil12chs@gmail.com"; /*"Gordon@Longrivertaichi.org";*/
         let name = document.getElementById("contactUs_name").value;
         let email = document.getElementById("contactUs_email").value;
         let message = document.getElementById("contactUs_message").value;
@@ -376,7 +376,12 @@ roy@longrivertaichi.org
 
         console.log(body)
 
-        var apigClient = apigClientFactory.newClient();
+	 var config = 
+	 {
+            region: 'eu-west-1'
+         };
+	    
+        var apigClient = apigClientFactory.newClient(config);
 
         var params = {}
         var additionalParams = {}
@@ -385,6 +390,7 @@ roy@longrivertaichi.org
         .then(function(result)
         {
             console.log('Success:', result);
+		alert("email sent to Gordon");
         })
         .catch( function(result)
         {
