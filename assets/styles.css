@@ -431,8 +431,12 @@ div.get-in-touch div.teacher
 
 div.get-in-touch div.teacher img
 {
-    height: 120px;
+    width: 100px;
     margin-right: 1em;
+}
+div.get-in-touch div.teacher.neil img
+{
+    height:120xs
 }
 
 div.get-in-touch div.form div.field
