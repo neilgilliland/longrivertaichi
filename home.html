@@ -9,17 +9,7 @@
 
     <link rel="stylesheet" href="assets/styles.css?v0.16">
 
-    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
-    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
-    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
-    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
-    <script type="text/javascript" src="apigClient.js"></script>
+   
 </head>
  
 <body>
@@ -88,24 +78,6 @@
         
         <h1>Weekly Classes</h1>
         <ul class="days">
-            <!-- <li>
-                <h2>Monday</h2>
-                
-                <div class="columns">
-                    <div class="address">
-                        Bellsmeadow Scout Hall<br/>
-                        10 Bellsmeadow Road<br/>
-                        Falkirk FK1 1SD
-                    </div>
-                    <a href="#scout-hut"><img src="assets/google-maps-icon.png"></img></a>
-                </div>
-
-                <ul class="time-slots">
-                    <li>10am to 11am - Beginners</li>
-                    <li>11am to 12pm - Advanced</li>
-                    <li>12pm to 1pm  - Sword</li>
-                </ul>
-            </li> -->
             <li>
                 <h2>Tuesday</h2>
                 <div class="columns">
@@ -175,15 +147,6 @@
                         <li>07852 726668</li>
                     </ul>
                 </div>
-                <!-- <div class="teacher neil">
-                    <img src="assets/neil.jpg" />
-                    <ul>
-                        <li>Neil Gilliland</li>
-                        <li>Dunblane Classes</li>
-                        <li>neil12chs@gmail.com</li>
-                        <li>07769 700096</li>
-                    </ul>
-                </div> -->
             </div>  
             <div class="form">
                 <h2>Send a message</h2>
@@ -365,35 +328,10 @@ roy@longrivertaichi.org
 
     function contactUs()
     {
-        let to = "neil12chs@gmail.com"; /*"Gordon@Longrivertaichi.org";*/
+        let to = ""
         let name = document.getElementById("contactUs_name").value;
         let email = document.getElementById("contactUs_email").value;
         let message = document.getElementById("contactUs_message").value;
-
-        let body  = {to:to, name:name, email:email, message:message}
-
-        console.log(body)
-
-	 var config = 
-	 {
-            region: 'eu-west-1'
-         };
-	    
-        var apigClient = apigClientFactory.newClient(config);
-
-        var params = {}
-        var additionalParams = {}
-
-        apigClient.rootPost(params, body, additionalParams)
-        .then(function(result)
-        {
-            console.log('Success:', result);
-		alert("email sent to Gordon");
-        })
-        .catch( function(result)
-        {
-            console.log('Failed:', result);
-        });
     }
 </script>
 
